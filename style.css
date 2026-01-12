@@ -105,6 +105,7 @@ footer {
     color: white;
     padding: 20px;
     margin-top: 40px;
+    position: sticky;
 }
 
 .footer-content {
