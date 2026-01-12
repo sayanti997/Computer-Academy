@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    background-image: url(https://img.freepik.com/premium-photo/3d-render-call-center-desks-with-customers-against-solid-background-concept-3d-rendering-call-center-desks-customer-interaction-solid-background_918839-381788.jpg?semt=ais_hybrid&w=740&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #05436f;
+    color: white;
+    padding: 15px;
+    position: sticky;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menuBtn {
+    font-size: 18px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* ===== MENU ===== */
+nav {
+    background: #1e5f74;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.submenu {
+    display: none;
+    background: #eaf2f8;
+    color: black;
+    margin-top: 5px;
+}
+
+.submenu li {
+    padding: 8px 15px;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===== BODY ===== */
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+.logo {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.academy-info h2 {
+    margin-bottom: 10px;
+    color: #031063;
+}
+
+.why-choose {
+    margin-top: 40px;
+    color: rgb(7, 0, 8);
+}
+
+.why-choose ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.why-choose li {
+    padding: 8px;
+    font-size: 18px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #0a3d62;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+   display: flex;
+    justify-content:space-around ;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .header-container h1 {
+        font-size: 16px;
+    }
+}
