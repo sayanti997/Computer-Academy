@@ -4,12 +4,20 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-body{
-    background-image: url(https://img.freepik.com/premium-photo/3d-render-call-center-desks-with-customers-against-solid-background-concept-3d-rendering-call-center-desks-customer-interaction-solid-background_918839-381788.jpg?semt=ais_hybrid&w=740&q=80);
+
+/* ===== FULL PAGE BACKGROUND ===== */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://img.freepik.com/premium-photo/3d-render-call-center-desks-with-customers-against-solid-background-concept-3d-rendering-call-center-desks-customer-interaction-solid-background_918839-381788.jpg");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
 }
 
 /* ===== HEADER ===== */
@@ -17,7 +25,6 @@ header {
     background: #05436f;
     color: white;
     padding: 15px;
-    position: sticky;
 }
 
 .header-top {
@@ -27,8 +34,7 @@ header {
 }
 
 #menuBtn {
-    font-size: 18px;
-    padding: 5px 10px;
+    padding: 6px 12px;
     cursor: pointer;
 }
 
@@ -44,8 +50,8 @@ nav ul {
 
 nav ul li {
     padding: 10px;
-    cursor: pointer;
     border-bottom: 1px solid #ccc;
+    cursor: pointer;
 }
 
 .submenu {
@@ -67,36 +73,36 @@ nav ul li:hover .submenu {
     display: none;
 }
 
-/* ===== BODY ===== */
+/* ===== MAIN CONTENT ===== */
 main {
+    flex: 1;
     padding: 30px;
     text-align: center;
+    margin: 20px;
+    border-radius: 15px;
 }
 
 .logo {
-    width: 200px;
+    width: 180px;
     border-radius: 50%;
     margin-bottom: 15px;
 }
 
 .academy-info h2 {
-    margin-bottom: 10px;
     color: #031063;
 }
 
 .why-choose {
-    margin-top: 40px;
-    color: rgb(7, 0, 8);
+    margin-top: 30px;
 }
 
 .why-choose ul {
     list-style: none;
-    margin-top: 15px;
 }
 
 .why-choose li {
-    padding: 8px;
     font-size: 18px;
+    padding: 8px;
 }
 
 /* ===== FOOTER ===== */
@@ -104,13 +110,11 @@ footer {
     background: #0a3d62;
     color: white;
     padding: 20px;
-    margin-top: 40px;
-    position: sticky;
 }
 
 .footer-content {
-   display: flex;
-    justify-content:space-around ;
+    display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -123,36 +127,18 @@ footer p {
     margin: 5px 0;
 }
 
-footer .copyright {
+.copyright {
     text-align: center;
-    margin-top: 15px;
-    font-size: 14px;
 }
 
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 600px) {
-    .header-container h1 {
+    .header-top h1 {
         font-size: 16px;
     }
-}
 
-@media (max-width: 768px){
-    footer{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        font-size: 14px;
-        padding: 15px;
-    }
-    body{
-        padding-bottom: 220px;
-    }
-
-}
-
-@media (min-width: 769px) {
-    footer {
-        position: static;
+    main {
+        margin: 10px;
+        padding: 20px;
     }
 }
