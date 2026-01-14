@@ -74,8 +74,41 @@
     </section>
 
     <section class="blink">
-        <a href="https://forms.gle/LFJA4W8xZyYmpaZL6">REGISTER HERE</a>
+        <button class="btn" onclick="openPopup()">Register Now</button>
     </section>
+
+<div class="popup-overlay" id="popup">
+    <div class="popup-box">
+        <h2>Registration Form</h2>
+
+<input type="text" placeholder="Full Name" id="name">
+<span class="error" id="nameError"></span>
+
+<input type="number" placeholder="Phone Number" id="phone">
+<span class="error" id="phoneError"></span>
+
+<input type="email" placeholder="Email ID" id="email">
+<span class="error" id="emailError"></span>
+
+<select id="qualification">
+    <option value="">Select Qualification</option>
+    <option>Below 10</option>
+    <option>10</option>
+    <option>10+2</option>
+    <option>UG</option>
+    <option>PG</option>
+    <option>Diploma</option>
+</select>
+<span class="error" id="qualificationError"></span>
+
+
+        <div class="popup-buttons">
+            <button onclick="submitForm()">Submit</button>
+            <button class="close-btn" onclick="closePopup()">Cancel</button>
+        </div>
+    </div>
+</div>
+
 
     <section class="why-choose">
         <h2>Why Choose Us</h2>
