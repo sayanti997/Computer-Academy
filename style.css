@@ -114,6 +114,11 @@ nav ul li {
     
 }
 
+.submenu a{
+    text-decoration: none;
+    color: black;
+}
+
 nav ul li:hover .submenu {
     display: block;
 }
@@ -216,6 +221,12 @@ footer h3 {
 
 footer p {
     margin: 5px 0;
+}
+
+.mail a{
+    text-decoration: none;
+    color: #eaf2f8;
+    cursor: pointer;
 }
 
 .copyright {
