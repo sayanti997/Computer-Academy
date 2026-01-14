@@ -43,7 +43,7 @@ if (!/^[A-Za-z]+( [A-Za-z]+)*$/.test(name)) {
 
     
     if(name.length < 5){
-        nameError.textContent = "Name must be minimum 3 letters";
+        nameError.textContent = "Name must be minimum 5 letters";
         isValid = false;
         }
     
