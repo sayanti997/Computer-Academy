@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 /* ===== FULL PAGE BACKGROUND ===== */
@@ -13,6 +14,9 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    line-height: 1.6;
+    transition: background 0.4s linear, color 0.4s ease;
+    scroll-behavior: smooth;
     background-image: url("https://img.freepik.com/premium-photo/3d-render-call-center-desks-with-customers-against-solid-background-concept-3d-rendering-call-center-desks-customer-interaction-solid-background_918839-381788.jpg");
     background-size: cover;
     background-position: center;
@@ -22,9 +26,19 @@ body {
 
 /* ===== HEADER ===== */
 header {
-    background: #05436f;
-    color: white;
-    padding: 15px;
+    color: #05436f;
+    text-shadow: 0 8px 16px rgb(55, 108, 224);
+    padding: 15px 30px;
+    border-radius: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    font-family: Georgia;
 }
 
 .header-top {
@@ -34,24 +48,48 @@ header {
 }
 
 #menuBtn {
-    padding: 6px 12px;
+    padding: 4px 8px;
     cursor: pointer;
+    border-radius: 8px;
+    box-shadow:  0 4px 12px rgba(121, 128, 230, 0.2);
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    outline: auto;
+    transition: transform 0.3s ease-in;
+
+}
+
+#menuBtn:hover{
+  transform: scale(1.05);
+  background-color: black;
+  color: #eaf2f8;
 }
 
 /* ===== MENU ===== */
 nav {
     background: #1e5f74;
     margin-top: 10px;
+    width: 100%;
+    padding: 4px 8px ;
+    border-radius: 8px;
+    
 }
 
 nav ul {
     list-style: none;
+    transition: transform 0.4s;
+}
+
+nav ul:hover{
+    transform: scale(1.01);
 }
 
 nav ul li {
-    padding: 10px;
+    padding: 15px 30px;
     border-bottom: 1px solid #ccc;
     cursor: pointer;
+    color: #eaf2f8;
 }
 
 .submenu {
@@ -59,10 +97,15 @@ nav ul li {
     background: #eaf2f8;
     color: black;
     margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid black;
 }
 
 .submenu li {
     padding: 8px 15px;
+    border: 1px solid gray;
+    color: black;
+    
 }
 
 nav ul li:hover .submenu {
@@ -92,6 +135,43 @@ main {
     color: #031063;
 }
 
+.blink{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bolder;
+    animation: link 1.2s infinite;
+}
+.blink a{
+    color:darkred;
+    text-decoration: none;
+}
+
+@keyframes link{
+       0% {
+        color: #ff4757;
+        text-shadow: 0 0 5px #ff4757;
+        transform: scale(1);
+    }
+    25% {
+        color: #ffa502;
+        text-shadow: 0 0 8px #ffa502;
+        transform: scale(1.05);
+    }
+    50% {
+        color: #2ed573;
+        text-shadow: 0 0 10px #2ed573;
+    }
+    75% {
+        color: #1e90ff;
+        text-shadow: 0 0 8px #1e90ff;
+    }
+    100% {
+        color: #ff4757;
+        text-shadow: 0 0 5px #ff4757;
+    }
+}
+
 .why-choose {
     margin-top: 30px;
 }
@@ -103,6 +183,11 @@ main {
 .why-choose li {
     font-size: 18px;
     padding: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.why-choose li:hover{
+    transform: scale(1.05);
 }
 
 /* ===== FOOTER ===== */
