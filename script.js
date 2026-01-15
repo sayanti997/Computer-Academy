@@ -74,7 +74,7 @@ if (!/^[A-Za-z]+( [A-Za-z]+)*$/.test(name)) {
         "Qualification: " + qualification
     );
 
-    closePopup();
+    
 }
 fetch("https://computer-academy-4.onrender.com/api/enquiry", {
     method: "POST",
