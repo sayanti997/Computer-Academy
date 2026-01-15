@@ -1,9 +1,11 @@
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
-menuBtn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-});
+if (menuBtn && menu) {
+    menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+}
 
 function openPopup() {
     document.getElementById("popup").style.display = "flex";
@@ -20,13 +22,11 @@ function submitForm() {
     let email = document.getElementById("email").value.trim();
     let qualification = document.getElementById("qualification").value;
 
-    
     let nameError = document.getElementById("nameError");
     let phoneError = document.getElementById("phoneError");
     let emailError = document.getElementById("emailError");
     let qualificationError = document.getElementById("qualificationError");
 
-    
     nameError.textContent = "";
     phoneError.textContent = "";
     emailError.textContent = "";
@@ -35,18 +35,15 @@ function submitForm() {
     let isValid = true;
 
     
-   
-if (!/^[A-Za-z]+( [A-Za-z]+)*$/.test(name)) {
-    nameError.textContent = "Name should contain only letters and a single space between words.";
-    isValid = false;
-}
-
-    
-    if(name.length < 5){
-        nameError.textContent = "Name must be minimum 5 letters";
+    if (!/^[A-Za-z]+( [A-Za-z]+)*$/.test(name)) {
+        nameError.textContent = "Name should contain only letters and single spaces.";
         isValid = false;
-        }
-    
+    } else if (name.length < 5) {
+        nameError.textContent = "Name must be at least 5 characters long.";
+        isValid = false;
+    }
+
+   
     if (!/^[0-9]{10}$/.test(phone)) {
         phoneError.textContent = "Phone number must be exactly 10 digits.";
         isValid = false;
@@ -66,35 +63,23 @@ if (!/^[A-Za-z]+( [A-Za-z]+)*$/.test(name)) {
 
     if (!isValid) return;
 
-    alert(
-        "Registration Successful!\n\n" +
-        "Name: " + name + "\n" +
-        "Phone: " + phone + "\n" +
-        "Email: " + email + "\n" +
-        "Qualification: " + qualification
-    );
-
-    
-
-fetch("https://computer-academy-4.onrender.com/api/enquiry", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        name,
-        phone,
-        email,
-        qualification
+    fetch("https://computer-academy-4.onrender.com/api/enquiry", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, phone, email, qualification })
     })
-})
-.then(res => res.json())
-.then(data => {
-    alert(data.message || "Enquiry submitted successfully!");
-    closePopup();
-})
-.catch(err => {
-    console.error(err);
-    alert("Server error. Please try again later.");
-});
+    .then(res => {
+        if (!res.ok) throw new Error("Server error");
+        return res.json();
+    })
+    .then(data => {
+        alert(data.message || "Enquiry submitted successfully!");
+        closePopup();
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Server error. Please try again later.");
+    });
 }
