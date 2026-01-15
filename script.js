@@ -76,5 +76,24 @@ if (!/^[A-Za-z]+( [A-Za-z]+)*$/.test(name)) {
 
     closePopup();
 }
-
-
+fetch("https://computer-academy-4.onrender.com/api/enquiry", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name,
+        phone,
+        email,
+        qualification
+    })
+})
+.then(res => res.json())
+.then(data => {
+    alert(data.message || "Enquiry submitted successfully!");
+    closePopup();
+})
+.catch(err => {
+    console.error(err);
+    alert("Server error. Please try again later.");
+});
