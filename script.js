@@ -75,7 +75,7 @@ if (!/^[A-Za-z]+( [A-Za-z]+)*$/.test(name)) {
     );
 
     
-}
+
 fetch("https://computer-academy-4.onrender.com/api/enquiry", {
     method: "POST",
     headers: {
@@ -97,3 +97,4 @@ fetch("https://computer-academy-4.onrender.com/api/enquiry", {
     console.error(err);
     alert("Server error. Please try again later.");
 });
+}
