@@ -276,7 +276,9 @@ main {
 }
 
 .why-choose li {
-    font-size: 18px;
+    font-size: 20px;
+    color: #250121;
+    font-weight: 600;
     padding: 8px;
     cursor: pointer;
     transition: transform 0.3s;
@@ -305,6 +307,57 @@ footer h3 {
 
 footer p {
     margin: 5px 0;
+}
+
+.trainer-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.trainer-section h3 {
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 25px;  
+    border-radius: 8px;        
+    color: #fff;
+}
+
+.trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.trainer-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    font-family: Georgia;
+}
+
+.trainer-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ff9800;
+}
+
+.trainer-card h4 {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ff9800;
+    margin-bottom: 5px;
+}
+
+.trainer-card p {
+    font-size: 15px;
+    color: #111;
+    margin: 2px 0;
 }
 
 .mail a{
