@@ -322,42 +322,46 @@ footer p {
     color: #fff;
 }
 
-.trainer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.slider-container {
+    overflow: hidden;
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
 }
 
 .trainer-card {
-    background: rgba(255, 255, 255, 0.25);
+    flex: 0 0 19.5%;  /* 5 cards per view */
+    box-sizing: border-box;
+    padding: 10px;
+    background: rgb(255,255,255,0.25);
     backdrop-filter: blur(12px);
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.3);
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    font-family: Georgia;
+    margin: 3px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.trainer-card:hover {
+    transform: scale(1.05);
 }
 
 .trainer-card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin-top: 10px;
+    object-fit: cover;
     margin-bottom: 10px;
     border: 2px solid #ff9800;
-}
-
-.trainer-card h4 {
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    color: #ff9800;
-    margin-bottom: 5px;
-}
-
-.trainer-card p {
-    font-size: 15px;
-    color: #111;
-    margin: 2px 0;
 }
 
 .mail a{

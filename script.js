@@ -83,3 +83,39 @@ function submitForm() {
         alert("Server error. Please try again later.");
     });
 }
+
+const track = document.getElementById("sliderTrack");
+let cards = document.querySelectorAll(".trainer-card");
+const cardsPerSlide = 5;
+let currentIndex = 0;
+
+/* Clone first 5 cards and add to end (for infinite effect) */
+for (let i = 0; i < cardsPerSlide; i++) {
+    let clone = cards[i].cloneNode(true);
+    track.appendChild(clone);
+}
+
+cards = document.querySelectorAll(".trainer-card");
+
+function slide() {
+    currentIndex += cardsPerSlide;
+    const cardWidth = cards[0].offsetWidth;
+
+    track.style.transform =
+        `translateX(-${currentIndex * cardWidth}px)`;
+
+    /* Reset smoothly when reaching end */
+    if (currentIndex >= cards.length - cardsPerSlide) {
+        setTimeout(() => {
+            track.style.transition = "none";
+            currentIndex = 0;
+            track.style.transform = "translateX(0)";
+        }, 800);
+
+        setTimeout(() => {
+            track.style.transition = "transform 0.8s ease-in-out";
+        }, 900);
+    }
+}
+
+setInterval(slide, 4000);
